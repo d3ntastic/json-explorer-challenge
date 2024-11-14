@@ -1,0 +1,5 @@
+!.prettierrc.cjs
+dist
+coverage
+build
+*.config.*

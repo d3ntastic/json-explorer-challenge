@@ -1,0 +1,79 @@
+{
+    "env": {
+        "browser": true,
+        "es2021": true,
+        "node": true
+    },
+    "extends": ["airbnb", "plugin:@typescript-eslint/recommended", "plugin:typescript-sort-keys/recommended", "prettier"],
+    "globals": {
+        "document": false,
+        "fetch": false,
+        "FormData": false,
+        "localStorage": false,
+        "shallow": false,
+        "window": false
+    },
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "ecmaVersion": 12,
+        "project": ["tsconfig.json"],
+        "sourceType": "module",
+        "ecmaFeatures": {
+            "jsx": true
+        }
+    },
+    "plugins": ["@typescript-eslint", "typescript-sort-keys", "react"],
+    "settings": {
+        "import/resolver": {
+            "node": {
+                "extensions": [".js", ".jsx", ".ts", ".tsx"]
+            },
+            "alias": {
+                "map": [
+                    ["components", "./src/components"],
+                    ["utils", "./src/utils"]
+                ],
+                "extensions": [".js", ".jsx", ".ts", ".tsx"]
+            }
+        }
+    },
+    "rules": {
+        "@typescript-eslint/default-param-last": ["error"],
+        "@typescript-eslint/explicit-module-boundary-types": "off",
+        "@typescript-eslint/no-use-before-define": ["error", { "functions": false }],
+        "@typescript-eslint/no-var-requires": "off",
+        "@typescript-eslint/prefer-includes": "error",
+        "import/prefer-default-export": "off",
+        "@typescript-eslint/prefer-nullish-coalescing": [
+            "warn",
+            {
+                "ignoreConditionalTests": true,
+                "ignoreMixedLogicalExpressions": true
+            }
+        ],
+        "@typescript-eslint/prefer-optional-chain": "warn",
+        "@typescript-eslint/prefer-reduce-type-parameter": "error",
+        "arrow-parens": "off",
+        "camelcase": "off",
+        "curly": "off",
+        "default-param-last": "off",
+        "implicit-arrow-linebreak": "off",
+        "@typescript-eslint/no-explicit-any": "off",
+        "import/extensions": [
+            "error",
+            "ignorePackages",
+            {
+                "js": "never",
+                "jsx": "never",
+                "ts": "never",
+                "tsx": "never"
+            }
+        ],
+        "react/jsx-filename-extension": [1, { "extensions": [".tsx", ".jsx"] }],
+        "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
+        "no-use-before-define": "off",
+        "react/react-in-jsx-scope": "off",
+        "react/require-default-props": "off",
+        "react/jsx-props-no-spreading": "off"
+    }
+}
